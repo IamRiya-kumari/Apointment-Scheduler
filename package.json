@@ -1,0 +1,37 @@
+{
+    "name": "app",
+    "version": "1.0.0",
+    "homepage":"https://IamRiya-kumari.github.io",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "start": "node backend/server.js",
+        "server": "nodemon backend/server.js",
+        "client": "npm start --prefix client",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    },
+   
+    "dependencies": {
+        "bcrypt": "^5.0.1",
+        "concurrently": "^7.0.0",
+        "dotenv": "^14.2.0",
+        "express": "^4.17.2",
+        "express-async-handler": "^1.2.0",
+        "express-validator": "^6.14.0",
+        "gh-pages": "^4.0.0",
+        "helmet": "^5.0.2",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.1.7",
+        "morgan": "^1.10.0",
+        "save-dev": "^0.0.1-security"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.15"
+    },
+    "engines": {
+        "node": "16.13.1"
+    }
+}
